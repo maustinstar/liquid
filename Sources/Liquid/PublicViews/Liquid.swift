@@ -23,7 +23,7 @@ public struct Liquid: View {
     
     /// A blob resembling a custom path
     /// - Parameters:
-    ///   - path: path to generat blob
+    ///   - path: the source path to construct anchor points
     ///   - interpolate: number of points along the path to up-sample
     ///   - samples: the number of samples to select at each animation
     ///   - period: length of animation
