@@ -102,11 +102,11 @@ struct ContentView: View {
 ## 🚀 Looking for more fun SwiftUI Packages?
 
 <a href="https://github.com/maustinstar/shiny">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=maustinstar&repo=shiny" height=150 align="left" />
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=maustinstar&repo=shiny" height=130 align="left" />
 </a>
 
 <a href="https://github.com/maustinstar/swiftui-drawer">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=maustinstar&repo=swiftui-drawer" height=150 />
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=maustinstar&repo=swiftui-drawer" height=130 />
 </a>
 
 ## Credits
