@@ -99,6 +99,12 @@ struct ContentView: View {
 
 **See more [Examples](https://github.com/maustinstar/liquid/blob/master/Docs/Examples.md).**
 
+## Contributing
+
+To get started, read the full [Implementation Guide](https://github.com/maustinstar/liquid/blob/master/Docs/Liquid%20Implementation%20Guide.md).
+
+**See [Contributing.md](https://github.com/maustinstar/liquid/blob/master/Contributing.md).**
+
 ## 🚀 Looking for more fun SwiftUI Packages?
 
 <a href="https://github.com/maustinstar/shiny">

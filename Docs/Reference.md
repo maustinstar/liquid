@@ -4,7 +4,7 @@ Usage details for `Liquid`
 
 ## Contents
 - [Basic Usage](#usage)
-- [Circles](#gradients)
+- [Circles](#circles)
 - [Custom Paths](#custom-paths)
 
     
