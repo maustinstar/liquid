@@ -12,9 +12,10 @@
 > - API implementation may change
 >
 > *When will this be ready?*
-> - adding documentation
-> - adding test cases
-> - API implementation may change
+> - Majority of documentation completed by August 21
+> - API mostly defined by August 21
+> - A (near-complete) beta tag by August 21
+> - v0.0.1 by August 28
 >
 > **Early adopters:**
 > 
