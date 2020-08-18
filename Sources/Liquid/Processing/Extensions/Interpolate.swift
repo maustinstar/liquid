@@ -8,6 +8,9 @@
 import Accelerate
 
 extension Array where Element == Double {
+    /// Re-samples data into `n` elements
+    /// - Parameter n: Number of samples
+    /// - Returns: Interpolated array with length `n`
     func interpolate(_ n: Int) -> [Double] {
         
         let stride = vDSP_Stride(1)
@@ -25,7 +28,9 @@ extension Array where Element == Double {
 }
 
 extension Array where Element == CGPoint {
-    
+    /// Re-samples data into `n` elements
+    /// - Parameter n: Number of samples
+    /// - Returns: Two arrays for x and y, each with length `n`
     func interpolate(_ n: Int) -> (x: [Double], y: [Double]) {
         let x = self.map { Double($0.x) }
         let y = self.map { Double($0.y) }

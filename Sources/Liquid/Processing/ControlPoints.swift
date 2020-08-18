@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  ControlPoints.swift
 //  
 //
 //  Created by Michael Verges on 8/17/20.
@@ -8,6 +8,7 @@
 import CoreGraphics
 import CLiquid
 
+/// Calculates tangents and generates Bezier control points.
 struct ControlPoints {
     
     var x1: [Double]

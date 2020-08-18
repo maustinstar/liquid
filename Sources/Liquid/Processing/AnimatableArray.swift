@@ -8,6 +8,7 @@
 import SwiftUI
 import enum Accelerate.vDSP
 
+/// A SwiftUI animatable wrapper for `Array<Double>`
 struct AnimatableArray: VectorArithmetic {
     
     var values: [Double]

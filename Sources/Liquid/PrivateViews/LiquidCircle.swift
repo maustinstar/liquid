@@ -16,7 +16,7 @@ struct LiquidCircle: Shape {
         set { radians = newValue }
     }
     
-    public func path(in rect: CGRect) -> Path {
+    func path(in rect: CGRect) -> Path {
         Path { path in
             let points = self.points(in: rect)
             path.smooth(x: points.x, y: points.y)

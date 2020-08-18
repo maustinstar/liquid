@@ -8,6 +8,9 @@
 import Foundation
 
 extension Array {
+    /// Selects `n` random elements from an array, ordered from the source array.
+    /// - Parameter n: Number of elements to select
+    /// - Returns: A randomly selected array with length `n`, ordered from the source array
     func randomElements(_ n: Int) -> [Element] {
         var copy = self
         var selection: [Element] = []

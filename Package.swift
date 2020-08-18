@@ -6,7 +6,8 @@ import PackageDescription
 let package = Package(
     name: "Liquid",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v13),
+        .macOS(SupportedPlatform.MacOSVersion.v10_15)
     ],
     products: [
         .library(

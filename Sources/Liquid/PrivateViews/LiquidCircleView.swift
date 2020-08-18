@@ -23,7 +23,7 @@ struct LiquidCircleView: View {
         self._cancellable = .init(initialValue: .none)
     }
     
-    public var body: some View {
+    var body: some View {
         LiquidCircle(radians: radians)
             .animation(.linear(duration: period))
             .onReceive(trigger) { _ in

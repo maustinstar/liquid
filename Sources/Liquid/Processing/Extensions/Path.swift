@@ -9,6 +9,9 @@ import SwiftUI
 
 extension Path {
     
+    /// Creates a Bezier path through all points with consistent tangent lines
+    /// - Parameter points: points to build into a path
+    /// - Returns: Bezier path through all points
     @discardableResult
     mutating func smooth(_ points: [CGPoint]) -> Path {
         let controls = ControlPoints(points)
@@ -22,6 +25,10 @@ extension Path {
         return self
     }
     
+    /// Creates a Bezier path through all points with consistent tangent lines
+    /// - Parameter x: x-coordinates to build into a path
+    /// - Parameter y: y-coordinates to build into a path
+    /// - Returns: Bezier path through all points
     @discardableResult
     mutating func smooth(x: [Double], y: [Double]) -> Path {
         let controls = ControlPoints(x: x, y: y)
