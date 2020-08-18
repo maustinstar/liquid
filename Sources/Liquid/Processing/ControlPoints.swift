@@ -9,6 +9,7 @@ import CoreGraphics
 import CLiquid
 
 /// Calculates tangents and generates Bezier control points.
+/// - seealso: https://github.com/maustinstar/liquid/blob/master/Docs/Liquid%20Implementation%20Guide.md#mathematics
 struct ControlPoints {
     
     var x1: [Double]

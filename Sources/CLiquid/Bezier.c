@@ -8,7 +8,16 @@
 #include "Bezier.h"
 
 /**
- * @brief a
+ * @brief Finds Bezier control points from source points
+ * @see https://github.com/maustinstar/liquid/blob/master/Docs/Liquid%20Implementation%20Guide.md#mathematics
+ *
+ * @param size number of points
+ * @param src_x source x coordinates
+ * @param src_y source y coordinates
+ * @param ctrl1_x control1 x coordinates
+ * @param ctrl1_y control1 y coordinates
+ * @param ctrl2_x control2 x coordinates
+ * @param ctrl2_y control2 y coordinates
  */
 void bezier_ctrl(const int size, const double *src_x, const double *src_y,
                  double *ctrl1_x, double *ctrl1_y,
