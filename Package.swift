@@ -27,6 +27,6 @@ let package = Package(
             dependencies: ["CLiquid"]),
         .testTarget(
             name: "LiquidTests",
-            dependencies: ["Liquid"]),
+            dependencies: ["CLiquid", "Liquid"]),
     ]
 )
