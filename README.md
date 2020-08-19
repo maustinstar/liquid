@@ -3,15 +3,11 @@
 > **⚠️This project is in progress⚠️**
 >
 > *What's happening right now?*
-> - adding documentation
-> - adding test cases
-> - API implementation may change
->
-> *When will this be ready?*
-> - Majority of documentation completed by August 21
-> - API mostly defined by August 21
-> - A (near-complete) beta tag by August 21
-> - v0.0.1 by August 28
+> - [x] Adding documentation
+> - [x] Adding test cases
+> - [ ] Finalizing API (by August 21)
+> - [ ] Beta Tag (by August 21)
+> - [ ] v0.0.1 (by August 28)
 >
 > **Early Adopters:**
 > 
