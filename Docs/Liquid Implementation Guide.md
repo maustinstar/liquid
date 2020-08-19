@@ -43,16 +43,19 @@ This target contains Swift tests for Liquid. The tests aim to cover the accuracy
 
 Liquid implements methods for generating liquid circles and liquid paths from custom source paths.
 
+### Notes on Bezier Paths
+Bezier control points define the shape of an arc. For a consistent path, the last control point of an arc should be tangent to the following point and the first control point of the next arc.
+
+![](https://raw.githubusercontent.com/maustinstar/liquid/master/Docs/Media/bezier.gif)
+
+To maintain a continuos path, Liquid ensures adjacent control points are always tangent. The tangent is found from the slope of neighboring points. The magnitude of the control points along the tangent line is 1/3 of the magnitude of the distance between the points defining the arc.
+
 ### Liquid Circles
 
 #### Step 1: Anchor Point Generation
 Generate `n` random values in the range of 0 to 2pi. To ensure the path maintains definition, the circle is divided into `n` slices with one point lying in each. These values are radians that will define anchor points for path generation. Using the radian values, find cartesian coordinates at the frame's radius.
 
 #### Step 2: Control Points
-Bezier control points define the shape of an arc. For a consistent path, the last control point of an arc should be tangent to the following point and the first control point of the next arc.
-
-To maintain a continuos path, Liquid ensures adjacent control points are always tangent. The tangent is found from the slope of neighboring points. The magnitude of the control points along the tangent line is 1/3 of the magnitude of the distance between the points defining the arc.
-
 For each point in the anchor array, use the slope between the previous and next neighbors to define the local tangent. For an arc between two points, the first control point is found by:
 1. Calculating the distance between the two points.
 2. travelling 1/3 of this distance in the direction of the left point's local tangent.
@@ -70,8 +73,6 @@ Turn any path into a set of points. The extracted points are usually the end poi
 Select `n` points from the point cloud. To ensure the path maintains definition, the cloud is divided into `n` segments with one point selected from each.
 
 #### Step 3: Control Points
-Bezier control points define the shape of an arc. For a consistent path, the last control point of an arc should be tangent to the following point and the first control point of the next arc.
-
 For each point in the anchor array, use the slope between the previous and next neighbors to define the local tangent. For an arc between two points, the first control point is found by: 1) calculating the distance between the two points. 2) travelling 1/3 of this distance in the direction of the left point's local tangent. The first control point is found by: 1) calculating the distance between the two points. 2) travelling -1/3 of this distance in the direction of the right point's local tangent.
 
 ## Design Choices
