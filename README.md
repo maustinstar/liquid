@@ -97,11 +97,15 @@ struct ContentView: View {
 
 ## Contributing
 
+<img src=https://raw.githubusercontent.com/maustinstar/liquid/master/Docs/Media/bezier.gif width=150 align="right" />
+
 To get started, read the full [Implementation Guide](https://github.com/maustinstar/liquid/blob/master/Docs/Liquid%20Implementation%20Guide.md).
 
 **See [Contributing.md](https://github.com/maustinstar/liquid/blob/master/Contributing.md).**
 
 ## 🚀 Looking for more fun SwiftUI Packages?
+
+**Take your SwiftUI apps to the next level with these Packages!**
 
 <a href="https://github.com/maustinstar/shiny">
   <img src="https://github-readme-stats.vercel.app/api/pin/?username=maustinstar&repo=shiny" height=130 align="left" />
