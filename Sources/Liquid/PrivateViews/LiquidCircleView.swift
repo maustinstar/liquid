@@ -29,7 +29,7 @@ struct LiquidCircleView: View {
             .onReceive(trigger) { _ in
                 self.radians = AnimatableArray(LiquidCircleView.generateRadial(self.samples))
             }.onAppear {
-                self.cancellable = trigger.connect()
+                self.cancellable = self.trigger.connect()
                 self.radians = AnimatableArray(LiquidCircleView.generateRadial(self.samples))
             }.onDisappear {
                 self.cancellable?.cancel()

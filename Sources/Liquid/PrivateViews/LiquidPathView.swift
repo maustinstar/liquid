@@ -39,7 +39,7 @@ struct LiquidPathView: View {
             .onReceive(trigger) { _ in
                 self.generate()
             }.onAppear {
-                self.cancellable = trigger.connect()
+                self.cancellable = self.trigger.connect()
                 self.generate()
             }.onDisappear {
                 self.cancellable?.cancel()
