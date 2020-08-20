@@ -71,7 +71,7 @@ For each point in the anchor array, use the slope between the previous and next 
 ### Using C
 For the batch geometric operation used to find Bezier controls, a C method is used. There is an argument for using C in large numeric operations because it is faster than Swift. Because the geometric operations happen at every animation frame, Liquid uses C for a performance bump.
 
-In a trial with one million points, a Swift-equivalent method took 0.78 seconds, while the C method performed in 0.035 seconds. While liquid will never process one million points, the large trial shows over 20x speed gain. To conduct this trial on a local machine, see `Tests/LiquidTests/PerformanceTests.swift`.
+In a trial with one million points, a Swift-equivalent method took 0.78 seconds, while the C method performed in 0.035 seconds. The trial shows over 20x faster speeds with C. To conduct this trial on a local machine, see `Tests/LiquidTests/PerformanceTests.swift`.
 
 ### Separate Circles and Paths 
 While a circle could be sampled according to the same processing as a regular path, there is a benefit in constructing the circle as its own path. For a circle, the radians are animated; allowing the anchor points to always stay on the source path. For a custom path, the x and y coordinates are linearly animated, which makes the anchor points deviate from the source path during animation
