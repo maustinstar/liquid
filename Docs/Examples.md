@@ -49,3 +49,30 @@ struct ContentView: View {
     }
 }
 ```
+
+#### Text On Art
+
+<img src=https://raw.githubusercontent.com/maustinstar/liquid/master/Docs/Media/liquid-art.gif width=250 align="right" />
+
+```swift
+struct ContentView: View {
+    var body: some View {
+        ZStack {
+            Liquid(samples: 3, period: 10.0)
+                .frame(width: 400, height: 200)
+                .foregroundColor(.yellow)
+                .opacity(0.2)
+                .blur(radius: 10)
+            Image("pattern")
+                .resizable()
+                .scaledToFill()
+                .frame(width: 280, height: 120)
+                .mask(Liquid(samples: 3, period: 6.0))
+                .shadow(radius: 40)
+            Text("Hello, World!")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+        }
+    }
+}
+```
