@@ -6,20 +6,6 @@
 
 Create a subtle and playful backsplash with `Liquid()`. Try liquid behind your artwork, as a button, or even with your own shapes. Just add `Liquid()` to your view to get started!
 
-> **⚠️This project is in progress⚠️**
->
-> *What's happening right now?*
-> - [x] Adding documentation
-> - [x] Adding test cases
-> - [ ] Finalizing API (by August 21)
-> - [ ] Beta Tag (by August 21)
-> - [ ] v0.0.1 (by August 28)
->
-> **Early Adopters:**
-> 
-> Add this package from the master branch.
-> A tagged release will not be available until the API is finalized. Use GitHub issues to file bugs, requests, and howto questions.
-
 ## Contents
 
 - [Add the Package](#package)
@@ -28,13 +14,6 @@ Create a subtle and playful backsplash with `Liquid()`. Try liquid behind your a
 - [Credits](#credits)
 
 ## Package
-
-> **⚠️This project is in progress⚠️**
->
-> **Early Adopters:**
-> Add this package from the master branch.
-> A tagged release will not be available until the API is finalized. Use GitHub issues to file bugs, requests, and howto questions.
-> v0.0.1 is expected by August 28
 
 ### For Xcode Projects
 
