@@ -28,3 +28,24 @@ struct ContentView: View {
     }
 }
 ```
+
+#### Profile Icon
+
+<img src=https://raw.githubusercontent.com/maustinstar/liquid/master/Docs/Media/liquid-profile.gif width=250 align="right" />
+
+```swift
+struct ContentView: View {
+    var body: some View {
+        ZStack {
+            Liquid()
+                .frame(width: 220, height: 220)
+                .foregroundColor(.yellow)
+            Image("profile")
+                .resizable()
+                .scaledToFill()
+                .frame(width: 200, height: 200)
+                .mask(Liquid())
+        }
+    }
+}
+```
