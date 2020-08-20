@@ -115,6 +115,8 @@ To get started, read the full [Implementation Guide](https://github.com/maustins
   <img src="https://github-readme-stats.vercel.app/api/pin/?username=maustinstar&repo=swiftui-drawer" height=130 />
 </a>
 
+<img src=https://raw.githubusercontent.com/maustinstar/liquid/master/Docs/Media/liquid-profile.gif width=140 align="right" />
+
 ## Credits
 
 * [**Michael Verges**](https://github.com/maustinstar) - *Initial work* - mverges3@gatech.edu - [![Follow on Linkedin](https://img.shields.io/badge/Follow%20on-Linkedin-5176B1.svg)](https://www.linkedin.com/in/michaelverges)
