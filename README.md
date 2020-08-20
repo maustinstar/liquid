@@ -1,28 +1,24 @@
 # Liquid
 
-> **⚠️This project is in progress⚠️**
->
-> *What's happening right now?*
-> - adding documentation
-> - adding test cases
-> - API implementation may change
->
-> *When will this be ready?*
-> - Majority of documentation completed by August 21
-> - API mostly defined by August 21
-> - A (near-complete) beta tag by August 21
-> - v0.0.1 by August 28
->
-> **Early Adopters:**
-> 
-> Add this package from the master branch.
-> A tagged release will not be available until the API is finalized. Use GitHub issues to file bugs, requests, and howto questions.
-
 <img src=https://raw.githubusercontent.com/maustinstar/liquid/master/Docs/Media/liquid-circle.gif width=140 align="right" />
 
 #### Add a Splash to Your SwiftUI Interface
 
 Create a subtle and playful backsplash with `Liquid()`. Try liquid behind your artwork, as a button, or even with your own shapes. Just add `Liquid()` to your view to get started!
+
+> **⚠️This project is in progress⚠️**
+>
+> *What's happening right now?*
+> - [x] Adding documentation
+> - [x] Adding test cases
+> - [ ] Finalizing API (by August 21)
+> - [ ] Beta Tag (by August 21)
+> - [ ] v0.0.1 (by August 28)
+>
+> **Early Adopters:**
+> 
+> Add this package from the master branch.
+> A tagged release will not be available until the API is finalized. Use GitHub issues to file bugs, requests, and howto questions.
 
 ## Contents
 
@@ -101,11 +97,15 @@ struct ContentView: View {
 
 ## Contributing
 
+<img src=https://raw.githubusercontent.com/maustinstar/liquid/master/Docs/Media/bezier.gif width=150 align="right" />
+
 To get started, read the full [Implementation Guide](https://github.com/maustinstar/liquid/blob/master/Docs/Liquid%20Implementation%20Guide.md).
 
 **See [Contributing.md](https://github.com/maustinstar/liquid/blob/master/Contributing.md).**
 
 ## 🚀 Looking for more fun SwiftUI Packages?
+
+**Take your SwiftUI apps to the next level with these Packages!**
 
 <a href="https://github.com/maustinstar/shiny">
   <img src="https://github-readme-stats.vercel.app/api/pin/?username=maustinstar&repo=shiny" height=130 align="left" />
