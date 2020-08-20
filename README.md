@@ -1,5 +1,11 @@
 # Liquid
 
+<img src=https://raw.githubusercontent.com/maustinstar/liquid/master/Docs/Media/liquid-circle.gif width=140 align="right" />
+
+#### Add a Splash to Your SwiftUI Interface
+
+Create a subtle and playful backsplash with `Liquid()`. Try liquid behind your artwork, as a button, or even with your own shapes. Just add `Liquid()` to your view to get started!
+
 > **⚠️This project is in progress⚠️**
 >
 > *What's happening right now?*
@@ -13,12 +19,6 @@
 > 
 > Add this package from the master branch.
 > A tagged release will not be available until the API is finalized. Use GitHub issues to file bugs, requests, and howto questions.
-
-<img src=https://raw.githubusercontent.com/maustinstar/liquid/master/Docs/Media/liquid-circle.gif width=140 align="right" />
-
-#### Add a Splash to Your SwiftUI Interface
-
-Create a subtle and playful backsplash with `Liquid()`. Try liquid behind your artwork, as a button, or even with your own shapes. Just add `Liquid()` to your view to get started!
 
 ## Contents
 
