@@ -15,15 +15,16 @@ struct LiquidPathView: View {
     @State var x: AnimatableArray = .zero
     @State var y: AnimatableArray = .zero
     @State var samples: Int
-    @State var cancellable: Cancellable?
     let period: TimeInterval
     let trigger: Timer.TimerPublisher
-    
+
+    var cancellable: Cancellable?
+
     init(path: CGPath, interpolate: Int, samples: Int, period: TimeInterval) {
         self._samples = .init(initialValue: samples)
-        self.trigger = Timer.TimerPublisher(interval: period, runLoop: .main, mode: .common)
         self.period = period
-        self._cancellable = .init(initialValue: .none)
+        self.trigger = Timer.TimerPublisher(interval: period, runLoop: .main, mode: .common)
+        self.cancellable = self.trigger.connect()
         self.pointCloud = path.getPoints().interpolate(interpolate)
     }
     
@@ -39,7 +40,6 @@ struct LiquidPathView: View {
             .onReceive(trigger) { _ in
                 self.generate()
             }.onAppear {
-                self.cancellable = self.trigger.connect()
                 self.generate()
             }.onDisappear {
                 self.cancellable?.cancel()
