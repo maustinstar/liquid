@@ -11,16 +11,17 @@ import Combine
 struct LiquidCircleView: View {
     @State var samples: Int
     @State var radians: AnimatableArray
-    @State var cancellable: Cancellable?
     let period: TimeInterval
     let trigger: Timer.TimerPublisher
-    
+
+    var cancellable: Cancellable?
+
     init(samples: Int, period: TimeInterval) {
         self._samples = .init(initialValue: samples)
-        self.trigger = Timer.TimerPublisher(interval: period, runLoop: .main, mode: .common)
-        self.period = period
         self._radians = .init(initialValue: AnimatableArray(LiquidCircleView.generateRadial(samples)))
-        self._cancellable = .init(initialValue: .none)
+        self.period = period
+        self.trigger = Timer.TimerPublisher(interval: period, runLoop: .main, mode: .common)
+        self.cancellable = trigger.connect()
     }
     
     var body: some View {
@@ -29,7 +30,6 @@ struct LiquidCircleView: View {
             .onReceive(trigger) { _ in
                 self.radians = AnimatableArray(LiquidCircleView.generateRadial(self.samples))
             }.onAppear {
-                self.cancellable = self.trigger.connect()
                 self.radians = AnimatableArray(LiquidCircleView.generateRadial(self.samples))
             }.onDisappear {
                 self.cancellable?.cancel()
