@@ -11,28 +11,28 @@ import Combine
 struct LiquidCircleView: View {
     @State var samples: Int
     @State var radians: AnimatableArray
+    @State var trigger: Timer.TimerPublisher?
+    @State var cancellable: Cancellable?
     let period: TimeInterval
-    let trigger: Timer.TimerPublisher
-
-    var cancellable: Cancellable?
 
     init(samples: Int, period: TimeInterval) {
         self._samples = .init(initialValue: samples)
         self._radians = .init(initialValue: AnimatableArray(LiquidCircleView.generateRadial(samples)))
         self.period = period
-        self.trigger = Timer.TimerPublisher(interval: period, runLoop: .main, mode: .common)
-        self.cancellable = trigger.connect()
+        
+        startTimer()
     }
     
     var body: some View {
         LiquidCircle(radians: radians)
             .animation(.linear(duration: period))
-            .onReceive(trigger) { _ in
+            .onAppear {
                 self.radians = AnimatableArray(LiquidCircleView.generateRadial(self.samples))
-            }.onAppear {
-                self.radians = AnimatableArray(LiquidCircleView.generateRadial(self.samples))
-            }.onDisappear {
-                self.cancellable?.cancel()
+                
+                self.startTimer()
+            }
+            .onDisappear {
+                self.stopTimer()
             }
     }
     
@@ -48,4 +48,22 @@ struct LiquidCircleView: View {
         
         return radians
     }
+    
+    private func startTimer() {
+        guard self.cancellable == nil else {
+            return
+        }
+        
+        self.cancellable = Timer.publish(every: period, on: .main, in: .common)
+            .autoconnect()
+            .sink { _ in
+                self.radians = AnimatableArray(LiquidCircleView.generateRadial(self.samples))
+            }
+    }
+    
+    private func stopTimer() {
+        self.cancellable?.cancel()
+        self.cancellable = nil
+    }
+    
 }
