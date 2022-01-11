@@ -1,6 +1,6 @@
 //
 //  LiquidPathView.swift
-//  
+//
 //
 //  Created by Michael Verges on 8/17/20.
 //
@@ -10,7 +10,7 @@ import Combine
 import Accelerate
 
 struct LiquidPathView: View {
-    
+
     let pointCloud: (x: [Double], y: [Double])
     @State var x: AnimatableArray = .zero
     @State var y: AnimatableArray = .zero
@@ -27,16 +27,17 @@ struct LiquidPathView: View {
         self.cancellable = self.trigger.connect()
         self.pointCloud = path.getPoints().interpolate(interpolate)
     }
-    
+
     func generate() {
-        let points = Array(0..<pointCloud.x.count).randomElements(samples)
-        self.x = AnimatableArray(points.map { self.pointCloud.x[$0] })
-        self.y = AnimatableArray(points.map { self.pointCloud.y[$0] })
+        withAnimation(.linear(duration: period)) {
+            let points = Array(0..<pointCloud.x.count).randomElements(samples)
+            self.x = AnimatableArray(points.map { self.pointCloud.x[$0] })
+            self.y = AnimatableArray(points.map { self.pointCloud.y[$0] })
+        }
     }
-    
+
     var body: some View {
         LiquidPath(x: x, y: y)
-            .animation(.linear(duration: period))
             .onReceive(trigger) { _ in
                 self.generate()
             }.onAppear {

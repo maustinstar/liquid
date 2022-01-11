@@ -1,6 +1,6 @@
 //
 //  LiquidCircleView.swift
-//  
+//
 //
 //  Created by Michael Verges on 8/17/20.
 //
@@ -19,25 +19,20 @@ struct LiquidCircleView: View {
         self._samples = .init(initialValue: samples)
         self._radians = .init(initialValue: AnimatableArray(LiquidCircleView.generateRadial(samples)))
         self.period = period
-        
-        startTimer()
     }
-    
+
     var body: some View {
         LiquidCircle(radians: radians)
-            .animation(.linear(duration: period))
             .onAppear {
-                self.radians = AnimatableArray(LiquidCircleView.generateRadial(self.samples))
-                
-                self.startTimer()
+                startTimer()
             }
             .onDisappear {
-                self.stopTimer()
+                stopTimer()
             }
     }
-    
+
     static func generateRadial(_ count: Int = 6) -> [Double] {
-        
+
         var radians: [Double] = []
         let offset = Double.random(in: 0...(.pi / Double(count)))
         for i in 0..<count {
@@ -45,25 +40,34 @@ struct LiquidCircleView: View {
             let max = Double(i + 1) / Double(count) * 2 * .pi
             radians.append(Double.random(in: min...max) + offset)
         }
-        
+
         return radians
     }
-    
+
     private func startTimer() {
-        guard self.cancellable == nil else {
-            return
+        guard cancellable == nil else { return }
+
+        // Get the animation started immediately by updating the radians.
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            animatedRadianUpdate()
         }
-        
-        self.cancellable = Timer.publish(every: period, on: .main, in: .common)
+
+        // Periodically update the radians to continue the animation.
+        cancellable = Timer.publish(every: period, on: .main, in: .common)
             .autoconnect()
             .sink { _ in
-                self.radians = AnimatableArray(LiquidCircleView.generateRadial(self.samples))
+                animatedRadianUpdate()
             }
+
+        func animatedRadianUpdate() {
+            withAnimation(.linear(duration: period)) {
+                radians = AnimatableArray(LiquidCircleView.generateRadial(samples))
+            }
+        }
     }
-    
+
     private func stopTimer() {
-        self.cancellable?.cancel()
-        self.cancellable = nil
+        cancellable?.cancel()
+        cancellable = nil
     }
-    
 }
